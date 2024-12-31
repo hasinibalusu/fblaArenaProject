@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Arena Events</title>
+ <link rel="stylesheet" href="css/style.css">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+ <!-- Navigation Menu -->
+ <nav class="topnav">
+  <div class="topnav-centered">
+      <a href="#" class="active">Home</a>
+      <a href="box-office.html">Box Office</a>
+      <a href="planner.html">Event Planner</a>
+      <a href="information.html">Information</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="#contact-us">Contact Us</a>
+  </div>
+</nav>
+
+ <section id="hero">
+   <div class="hero-content">
+     <svg viewBox="0 0 500 150" class="curved-text">
+       <path id="curve" d="M50,120 Q250,40 450,120" fill="none" />
+       <text>
+         <textPath href="#curve" startOffset="50%" text-anchor="middle">
+           Patriot Arena
+         </textPath>
+       </text>
+     </svg>     
+     <div class="logo-placeholder"></div>
+     <p>Uniting Our Community, One Event at a Time</p>
+     <a href="#events" class="btn-primary">Explore Events</a>
+   </div>
+ </section>
+
+ <section id="events">
+   <div class="container">
+       <div class="carousel-container">
+           <button class="prev">❮</button>
+           <div class="carousel">
+               <div class="event-card">
+                   <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/rockcms/2024-05/240509-nba-game-ch-1311-f72588.jpg" alt="Basketball Championship">
+                   <h3>Local Basketball Championship</h3>
+                   <p>Date: December 12, 2024</p>
+                   <a href="sports.html" class="btn-secondary">View Details</a>
+               </div>
+               <div class="event-card">
+                   <img src="https://images.pexels.com/photos/3249760/pexels-photo-3249760.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Holiday Choir Concert">
+                   <h3>Holiday Celebration</h3>
+                   <p>Date: December 19, 2024</p>
+                   <a href="concerts.html" class="btn-secondary">View Details</a>
+               </div>
+               <div class="event-card">
+                   <img src="https://media.istockphoto.com/id/1457587318/photo/male-doctor-giving-lecture-or-presentation-at-medical-seminar.jpg?s=612x612&w=0&k=20&c=CArA4husWxeEeG6qxFzm8NBrPiUEdDR1zS2LCZfjitA=" alt="Science Fair">
+                   <h3>Science Competition</h3>
+                   <p>Date: December 22, 2024</p>
+                   <a href="school.html" class="btn-secondary">View Details</a>
+               </div>
+           </div>
+           <button class="next">❯</button>
+       </div>
+   </div>
+</section>
+ 
+ <!-- Box Office Section -->
+<section id="box-office" class="box-office-section">
+  <div class="container">
+    <h2 class="section-title">Box Office</h2>
+    <div class="ticket-options">
+      <div class="ticket-option">
+        <img src="https://plus.unsplash.com/premium_photo-1721755953825-5c329a3dc960?q=80&w=1924&auto=format&fit=crop" alt="Sports Events">
+        <h3>Sporting Events</h3>
+        <p></p>
+        <a href="box-office.html" class="btn-primary">Buy Tickets</a>
+      </div>
+      <div class="ticket-option">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=2070&auto=format&fit=crop" alt="Concert Events">
+        <h3>Live Concerts</h3>
+        <p></p>
+        <a href="box-office.html" class="btn-primary">Buy Tickets</a>
+      </div>
+      <div class="ticket-option">
+        <img src="https://images.unsplash.com/photo-1560439513-74b037a25d84?q=80&w=2070&auto=format&fit=crop" alt="trade Events">
+        <h3>Trade Shows</h3>
+        <p></p>
+        <a href="box-office.html" class="btn-primary">Buy Tickets</a>
+      </div>
+      <div class="ticket-option">
+        <img src="https://images.unsplash.com/photo-1560439513-74b037a25d84?q=80&w=2070&auto=format&fit=crop" alt="other Events">
+        <h3>Other Community Events</h3>
+        <p></p>
+        <a href="box-office.html" class="btn-primary">Buy Tickets</a>
+      </div>
+    </div>
+  </div>
+ </section>
+ 
+
+  <!-- Planner Section Link -->
+<section id="planner">
+ <div class="container">
+   <h2 class="section-title">Plan Your Event</h2>
+   <p>Ready to host your event at our arena? Visit our planning page to get started!</p>
+   <a href="planner.html" class="btn-primary">Go to Event Planner</a>
+ </div>
+</section>
+
+<!-- Contact Us Section -->
+<section id="contact-us" class="contact-section">
+ <h2>Contact Us</h2>
+ <p>If you have any questions or need further information about our events, feel free to reach out!</p>
+
+ <!-- Contact Information -->
+ <ul style="list-style-type:none;">
+     <li><strong>Phone:</strong> (555) 123-4567</li>
+     <li><strong>Email:</strong> info@patriotarena.com</li>
+     <li><strong>Address:</strong> Patriot Way, Stevenson, IL.</li>
+ </ul>
+
+ <!-- Send Us a Message Form -->
+ <form action="#" method="POST" style="margin-top:.9em; display: flex; flex-direction: column; align-items: center;">
+     <input type="text" name="name" placeholder="Your Name" required style="width:100%; max-width:400px; padding:.9em; margin-bottom:.9em;">
+     <input type="email" name="email" placeholder="Your Email" required style="width:100%; max-width:400px; padding:.9em; margin-bottom:.9em;">
+    
+     <!-- Centered Message Box and Button -->
+     <div style="display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 400px;">
+         <textarea name="message" placeholder='Your Message' rows='4' required style="width:100%; padding:.9em; margin-bottom:.5em;"></textarea>
+         <button type='submit' class='btn-primary' style="width: 100%;">Send Message</button>
+     </div>
+ </form>
+
+ <!-- Signature or Closing Statement -->
+ <p style="margin-top: 1em;">We look forward to hearing from you!</p>
+ <p style="font-style: italic;">Best regards,<br>The Patriot Arena Team</p>
+</section>
+ <!-- Footer -->
+ <footer>
+   <div class="container">
+     <p>&copy; 2024 PatriotArena. All Rights Reserved.</p>
+   </div>
+ </footer>
+</body>
+<script src="script.js"></script>
+</html>

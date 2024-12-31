@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db; /* Light blue */
+            --secondary-color: #2c3e50; /* Darker blue */
+            --accent-color: #603ff1; /* Accent color */
+            --text-color: #ffffff; /* White text */
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGJpbGxib3clMjBpbWFnZXxlbnwwfHx8fDE2Mzg0NjQwMDg&ixlib=rb-1.2.1&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        header {
+            background-color: rgba(44, 62, 80, 0.9);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        /* ========================= */
+  /* Navigation Bar           */
+  /* ========================= */
+  .topnav {
+    background: linear-gradient(to right, #4403b3, #112276);
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px 0;
+  }
+  
+  
+  
+    .topnav .topnav-centered {
+      display: inline-block;
+    }
+  
+    .topnav a {
+      display: inline-block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 16px 22px;
+      text-decoration: none;
+      font-size: 20px;
+      transition: all 0.3s ease;
+      margin: 0 5px;
+    }
+  
+    .topnav a:hover {
+      background-color: #ffffff;
+      color: #003366;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  
+    .topnav a.active {
+      background-color: #ffffff;
+      color: #003366;
+    }
+  
+    /* Responsive design */
+    @media screen and (max-width: 600px) {
+      .topnav .topnav-centered {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding-bottom: 10px;
+      }
+      
+      .topnav a {
+          margin: 5px auto;
+          width: 100%;
+          padding: 10px;
+      }
+    }
+  
+    /* Adjust body to account for fixed navbar */
+    body {
+      margin-top: 60px;
+    }
+  
+  
+  /* ========================= */
+  /* Mobile Menu Styling      */
+  /* ========================= */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav ul li {
+      margin: 10px 0;
+    }
+  }
+
+        /* Content Styling */
+        .container {
+            max-width: 1200px;
+            margin-top: 60px; /* Adjust body to account for fixed navbar */
+            margin-left:auto; 
+			margin-right:auto; 
+			padding-left:.5rem; 
+			padding-right:.5rem; 
+			padding-top:.5rem; 
+			padding-bottom:.5rem; 
+			background-color:white; 
+			border-radius:.5rem; 
+			box-shadow:.3rem .3rem .5rem rgba(0,0,0,.4); 
+			overflow:hidden; 
+			color:black; 
+			text-align:center; 
+			font-size:.9rem; 
+			line-height:.8rem; 
+        }
+
+        /* Filter Menu Styles */
+        .filter-menu {
+          display:flex; 
+          justify-content:flex-end; /* Align to the right */
+          margin-bottom:.5rem
+         }
+
+         .filter-menu select {  
+          padding:.75rem;  
+          border-radius:.5rem;  
+          border:none;  
+          box-shadow:.1rem .1rem .3rem rgba(0,0,0,.4);  
+          margin-right:.5rem
+         }
+
+         /* Search Bar Styles */
+         .search-bar {
+          display:flex; 
+          justify-content:flex-end; /* Align to the right */
+          margin-bottom:.5rem
+         }
+
+         .search-bar input {  
+          padding:.75rem;  
+          border-radius:.5rem;  
+          border:none;  
+          box-shadow:.1rem .1rem .3rem rgba(0,0,0,.4);  
+          width:auto
+         }
+
+         .search-bar button {  
+          padding:.75rem;.7rem;border-radius:.5rem;background-color:#3498db;color:white;border:none;margin-left:.5rem
+         }
+
+         .search-bar button:hover {  
+          background-color:#603ff1
+         }
+
+         /* Event Grid Styles */
+         .event-grid {
+          display:grid; 
+          grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); /* Responsive grid layout with better spacing */
+          gap:.5rem; 
+          justify-content:center
+         }
+
+         .event-card {  
+          background-color:white;  
+          border-radius:.5rem;  
+          box-shadow:.3rem .3rem .5rem rgba(0,0,0,.4);  
+          overflow:hidden;
+         }
+
+         .event-image {   
+          width:100%;   
+          height:150px; /* Set a fixed height for uniformity */
+          object-fit:center
+         }
+
+         .event-details {  
+          padding:.5rem
+         }
+
+         .event-title {  
+          font-size:.9rem
+         }
+
+         .event-date,.event-price {  
+          font-size:.7rem
+         }
+
+         .btn-buy {  
+          display:inline-block;  
+          background-color:#3498db;  
+          color:white;  
+          padding:.3rem;.7rem;border-radius:.5rem;text-decoration:none;margin-top:.5rem
+         }
+
+         .btn-buy:hover {  
+          background-color:#603ff1
+         }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Menu -->
+<nav class="topnav">
+    <div class="topnav-centered">
+      <a href="index.html">Home</a>
+      <a href="box-office.html" class="active">Box Office</a>
+      <a href="planner.html">Event Planner</a>
+      <a href="information.html">Information</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="#contact-us">Contact Us</a>
+    </div>
+</nav>
+
+<header>
+    <h1>Patriot Arena Box Office</h1>
+</header>
+
+<div class="container">
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search for events..." style="width:auto;">
+        <button onclick="searchEvents()">Search</button>
+    </div>
+
+    <!-- Filter Menu -->
+    <div class="filter-menu">
+       <select id="event-type" onchange="filterEvents(this.value)">
+           <option value="all">All Events</option>
+           <option value="sports">Sports Events</option>
+           <option value="concert">Concerts</option>
+           <option value="trade">Trade Shows</option>
+           <option value="other">Other Events</option>
+       </select>
+    </div>
+
+    <!-- Event Grid -->
+    <div class="event-grid" id="event-grid">
+      <!-- Example event card for Concert -->
+      <div class="event-card" data-type="concert">
+          <img src="https://images.pexels.com/photos/1190299/pexels-photo-1190299.jpeg" alt="Summer Music Festival" class="event-image">
+          <div class="event-details">
+              <h2 class="event-title">Summer Music Festival</h2>
+              <p class="event-date">July 15, 2025</p>
+              <p class="event-price">Tickets from $50</p>
+              <a href="interactive-map.html" class="btn-buy">Buy Tickets</a>
+          </div>
+      </div>
+
+      <!-- Example event card for Sports -->
+      <div class="event-card" data-type="sports">
+          <img src="https://images.pexels.com/photos/6539276/pexels-photo-6539276.jpeg" alt="Indoor Ice-Skating" class="event-image">
+          <div class="event-details">
+              <h2 class="event-title">Indoor Ice-Skating Rink</h2>
+              <p class="event-date">January 26, 2025</p>
+              <p class="event-price">Tickets from $30</p>
+              <a href="#" class="btn-buy">Buy Tickets</a>
+          </div>
+      </div>
+
+      <!-- Example event card for Trade Shows -->
+      <div class="event-card" data-type="trade">
+          <img src="https://images.pexels.com/photos/4028878/pexels-photo-4028878.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Tech Innovation Expo" class="event-image">
+          <div class="event-details">
+              <h2 class="event-title">Tech Innovation Expo</h2>
+              <p class="event-date">April 5, 2026</p>
+              <p class="event-price">Tickets from $20</p>
+              <a href="#" class="btn-buy">Buy Tickets</a>
+          </div>
+      </div>
+
+      <!-- Example event card for Other Events -->
+      <div class='event-card' data-type='other'>
+           <img src='https://images.pexels.com/photos/1840320/pexels-photo-1840320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' alt='Stand-up Comedy Night' class='event-image'>
+           <div class='event-details'>
+               <h2 class='event-title'>Stand-up Comedy Night</h2>
+               <p class='event-date'>September 20, 2025</p>    
+               <p class='event-price'>Tickets from $25</p>    
+               <a href='#' class='btn-buy'>Buy Tickets</a>    
+           </div>   
+       </div> 
+
+       <!-- Additional example event cards -->
+       <!-- Example event card for Concert -->
+       <div class='event-card' data-type='concert'>
+           <img src='https://images.pexels.com/photos/1640776/pexels-photo-1640776.jpeg' alt='Rock Concert' class='event-image'>
+           <div class='event-details'>
+               <h2 class='event-title'>Rock Concert Night</h2>
+               <p class='event-date'>August 10, 2025</p>
+               <p class='event-price'>Tickets from $45</p>
+               <a href='#' class='btn-buy'>Buy Tickets</a>    
+           </div>   
+       </div> 
+
+       <!-- Example event card for Sports -->
+       <div class='event-card' data-type='sports'>
+           <img src='https://images.pexels.com/photos/2698514/pexels-photo-2698514.jpeg' alt='Basketball Game' class='event-image'>
+           <div class='event-details'>
+               <h2 class='event-title'>Basketball Game Finals</h2>
+               <p class='event-date'>March 12, 2026</p>    
+               <p class='event-price'>Tickets from $35</p>    
+               <a href='#' class='btn-buy'>Buy Tickets</a>    
+           </div>   
+       </div> 
+
+       <!-- Example event card for Trade Shows -->
+       <div class='event-card' data-type='trade'>
+           <img src='https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg' alt='Business Expo' class='event-image'>
+           <div class='event-details'>
+               <h2 class='event-title'>Annual Business Expo</h2>    
+               <p class='event-date'>November 15, 2026</p>    
+               <p class='event-price'>Tickets from $15</p>    
+               <a href='#' class='btn-buy'>Buy Tickets</a>    
+           </div>   
+       </div> 
+
+       <!-- Example event card for Other Events -->
+       <div class='event-card' data-type='other'>
+           <img src='https://images.pexels.com/photos/3730767/pexels-photo-3730767.jpeg' alt='Art Exhibition' class='event-image'>
+           <div class='event-details'>
+               <h2 class='event-title'>Art Exhibition Opening Night</h2>    
+               <p class='event-date'>December 10, 2026</p>    
+               <p class='event-price'>Tickets from $20</p>    
+               <a href='#' class='btn-buy'>Buy Tickets</a>    
+           </div>   
+       </div> 
+
+    </div> <!-- End of event-grid -->
+    
+</div> <!-- End of container -->
+
+<script>
+// JavaScript to filter events based on type
+function filterEvents(type) {
+    const cards = document.querySelectorAll('.event-card');
+    cards.forEach(card => {
+        if (type === 'all' || card.getAttribute('data-type') === type) {
+            card.style.display = 'block'; // Show the card
+        } else {
+            card.style.display = 'none'; // Hide the card
+        }
+    });
+}
+
+// JavaScript to search events based on input
+function searchEvents() {
+    const input = document.getElementById('search-input').value.toLowerCase();
+    const cards = document.querySelectorAll('.event-card');
+    
+    cards.forEach(card => {
+        const title = card.querySelector('.event-title').innerText.toLowerCase();
+        
+        if (title.includes(input)) {
+           card.style.display = 'block'; // Show the card if it matches the search term
+       } else {
+           card.style.display = 'none'; // Hide the card if it doesn't match
+       }
+   });
+}
+</script>
+
+</body>
+</html>
+

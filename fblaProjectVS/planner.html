@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Planner - Arena Events</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #ffffff;
+      line-height: 1.6;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+            
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Norwester', sans-serif;
+      font-size: 3rem;
+      color: #ffffff;
+      text-shadow: 
+        3px 3px 0px rgba(0,0,0,0.2),
+        5px 5px 10px rgba(0,0,0,0.15),
+        0 0 20px rgba(255,255,255,0.2);
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+    }
+
+    
+   /* ========================= */
+/* Navigation Bar           */
+/* ========================= */
+.topnav {
+  background: linear-gradient(to right, #4403b3, #112276);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 0;
+}
+
+
+
+  .topnav .topnav-centered {
+    display: inline-block;
+  }
+
+  .topnav a {
+    display: inline-block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 16px 22px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+  }
+
+  .topnav a:hover {
+    background-color: #ffffff;
+    color: #003366;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  .topnav a.active {
+    background-color: #ffffff;
+    color: #003366;
+  }
+
+  /* Responsive design */
+  @media screen and (max-width: 600px) {
+    .topnav .topnav-centered {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+    
+    .topnav a {
+        margin: 5px auto;
+        width: 100%;
+        padding: 10px;
+    }
+  }
+
+  /* Adjust body to account for fixed navbar */
+  body {
+    margin-top: 60px;
+  }
+
+
+/* ========================= */
+/* Mobile Menu Styling      */
+/* ========================= */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}
+
+    /* Responsive design */
+    @media screen and (max-width: 600px) {
+        .topnav .topnav-centered {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 10px;
+        }
+        
+        .topnav a {
+            margin: 5px auto;
+            width: 100%;
+            padding: 10px;
+        }
+    }
+
+/* Adjust body to account for fixed navbar */
+body {
+    margin-top: 60px;
+}
+
+
+    .planner-content > div {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 
+        0 10px 30px rgba(0,0,0,0.1),
+        0 5px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .planner-content > div:hover {
+      transform: translateY(-10px);
+    }
+
+    .booking-form input, 
+    .booking-form select, 
+    .booking-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(0,0,0,0.1);
+      color: #ffffff;
+      border-radius: 8px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #ff6b6b, #ff4757);
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .availability-calendar iframe {
+      border-radius: 15px;
+      filter: grayscale(50%) brightness(80%);
+      transition: all 0.3s ease;
+    }
+
+    .availability-calendar iframe:hover {
+      filter: grayscale(0%) brightness(100%);
+    }
+
+    footer {
+      background: rgba(0,0,0,0.3);
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Menu -->
+  <nav class="topnav">
+    <div class="topnav-centered">
+        <a href="index.html">Home</a>
+        <a href="box-office.html">Box Office</a>
+        <a href="planner.html" class="active">Event Planner</a>
+        <a href="information.html">Information</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="index.html#contact-us">Contact Us</a>
+    </div>
+</nav>
+
+
+
+  <section id="planner" class="planner-section">
+    <div class="container">
+      <h2 class="section-title">Event Planner</h2>
+      
+      <div class="planner-content">
+        <div class="rental-info">
+          <h3>Arena Rental Information</h3>
+          <p>Our arena is available for various events including sports, concerts, and school functions. Rental rates vary based on the type, duration, and specific requirements of the event.</p>
+          <table>
+            <tr>
+              <th>Event Type</th>
+              <th>Weekday Rate</th>
+              <th>Weekend Rate</th>
+            </tr>
+            <tr>
+              <td>Sports Event</td>
+              <td>$1000 per day</td>
+              <td>$1500 per day</td>
+            </tr>
+            <tr>
+              <td>Concert</td>
+              <td>$2000 per day</td>
+              <td>$3000 per day</td>
+            </tr>
+            <tr>
+              <td>School Function</td>
+              <td>$800 per day</td>
+              <td>$1200 per day</td>
+            </tr>
+          </table>
+          <p>All rentals include basic setup and cleanup. Additional services are available for an extra fee.</p>
+        </div>
+
+        <div class="additional-services">
+          <h3>Additional Services</h3>
+          <ul>
+            <li>Sound System: $500 per day</li>
+            <li>Lighting Equipment: $700 per day</li>
+            <li>Stage Setup: $1000</li>
+            <li>Security Personnel: $25 per hour per guard</li>
+            <li>Catering Services: Custom quote based on menu and guest count</li>
+          </ul>
+        </div>
+
+        <div class="contact-info">
+          <h3>Contact Us</h3>
+          <p>For bookings and inquiries, please contact our event coordination team:</p>
+          <ul>
+            <li>Phone: (555) 123-4567</li>
+            <li>Email: bookings@patriotarena.com</li>
+            <li>Office Hours: Monday-Friday, 9am-5pm</li>
+          </ul>
+        </div>
+
+        <div class="availability-calendar">
+          <h3>Arena Availability</h3>
+          <p>Check our calendar for available dates:</p>
+          <iframe src="https://calendar.google.com/calendar/embed?src=example%40gmail.com&ctz=America%2FNew_York" style="border: 0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+        </div>
+
+        <div class="booking-form">
+          <h3>Request a Booking</h3>
+          <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Phone Number">
+            <select name="event-type" required>
+              <option value="">Select Event Type</option>
+              <option value="sports">Sports Event</option>
+              <option value="concert">Concert</option>
+              <option value="school">Trade Show</option>
+              <option value="other">Other</option>
+            </select>
+            <input type="date" name="event-date" placeholder="Date"required>
+            <input type="time" name="event-start-time" placeholder="Start Time"required>
+            <input type="time" name="event-end-time" placeholder="End Time"required>
+            <input type="number" name="expected-attendance" placeholder="Expected Attendance" min="1" required>
+            <textarea name="event-details" placeholder="Event Details" rows="4"></textarea>
+            <fieldset>
+              <legend>Additional Services Required</legend>
+              <label><input type="checkbox" name="services[]" value="sound"> Sound System</label>
+              <label><input type="checkbox" name="services[]" value="lighting"> Lighting Equipment</label>
+              <label><input type="checkbox" name="services[]" value="stage"> Stage Setup</label>
+              <label><input type="checkbox" name="services[]" value="security"> Security Personnel</label>
+              <label><input type="checkbox" name="services[]" value="catering"> Catering Services</label>
+            </fieldset>
+            <textarea name="special-requests" placeholder="Special Requests or Requirements" rows="3"></textarea>
+            <button type="submit" class="btn-primary">Submit Booking Request</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 PatriotArena. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
