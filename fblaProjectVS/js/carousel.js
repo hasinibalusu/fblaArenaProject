@@ -1,33 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.querySelector('.carousel');
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-    const cards = carousel.querySelectorAll('.event-card');
-    let currentIndex = 0;
+const track = document.querySelector('.carousel-track');
+const cards = Array.from(track.children);
+const nextButton = document.querySelector('.carousel-button.right');
+const prevButton = document.querySelector('.carousel-button.left');
 
-    // Function to show the current card based on index
-    function showCard(index) {
-        cards.forEach((card, i) => {
-            card.style.display = i === index ? 'block' : 'none';
-        });
-    }
+let currentIndex = 0;
 
-    // Function to show the next card
-    function nextCard() {
-        currentIndex = (currentIndex + 1) % cards.length; // Loop back to start
-        showCard(currentIndex);
-    }
+nextButton.addEventListener('click', () => {
+  currentIndex++;
+  if (currentIndex >= cards.length) {
+    currentIndex = 0; // Loop back to the first slide
+  }
+  const amountToMove = cards[currentIndex].offsetWidth;
+  track.style.transform = `translateX(-${amountToMove * currentIndex}px)`;
+});
 
-    // Function to show the previous card
-    function prevCard() {
-        currentIndex = (currentIndex - 1 + cards.length) % cards.length; // Loop back to end
-        showCard(currentIndex);
-    }
-
-    // Event listeners for buttons
-    prevButton.addEventListener('click', prevCard);
-    nextButton.addEventListener('click', nextCard);
-
-    // Show the first card initially
-    showCard(currentIndex);
+prevButton.addEventListener('click', () => {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = cards.length - 1; // Loop back to the last slide
+  }
+  const amountToMove = cards[currentIndex].offsetWidth;
+  track.style.transform = `translateX(-${amountToMove * currentIndex}px)`;
 });
